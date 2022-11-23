@@ -76,7 +76,9 @@ export default {
       userForm.append("username", this.credentials.username);
       userForm.append("password", this.credentials.password);
       userForm.append("passwordConfirm", this.credentials.passwordConfirm);
-      userForm.append("image", this.credentials.image);
+      if (this.credentials.image) {
+        userForm.append("image", this.credentials.image);
+      }
       console.log(userForm);
       axios({
         method: "post",
